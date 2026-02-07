@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+// import { AppComponent } from './app.component';
+// import { HeaderComponent } from './Header/header.component';
+// import { TopHeaderComponent } from './top-header/top-header.component';
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+// @NgModule({
+//   declarations: [
+//     AppComponent,HeaderComponent, TopHeaderComponent
+//   ],
+//   imports: [
+//     BrowserModule
+//   ],
+//   providers: [],
+//   bootstrap: [AppComponent]
+// })
+// export class AppModule { }
