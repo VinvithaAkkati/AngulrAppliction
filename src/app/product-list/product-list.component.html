@@ -1,5 +1,8 @@
+<img [src]='product.pImage'>
 <p>Name: {{ product.name }}</p> 
 <p>Price: {{'$' + product.price}}</p>
 <P>Color: {{product.color}}</P>
 <p>Discounted Price: {{'$'+ getDiscountedPrice().toFixed(2)}}</p>
 <p>{{product.instock > 0 ? 'Only ' + product.instock + ' items Left' : 'Out of Stock'}}</p>
+<button bind-disabled = 'isOutOfStock()'>Buy Now</button>
+<input [value] = "product.Owner" type="text" [attr.aria-hidden]="product.flag" name="textinput">
