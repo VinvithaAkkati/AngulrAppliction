@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+  //name = "Vinvitha";
+  addToCart:number = 0; 
   product = {
   name: 'iPhone 18 pro max',
   price: 999,
@@ -27,5 +29,26 @@ export class ProductListComponent {
   }
   getDiscountedPrice() {
     return (this.product.price - ((this.product.price * this.product.discount)/100))
+  }
+  onNameChange(event : any)
+  {
+    //this.product.Owner = "Akkati";
+    //this.name = event.target.value;
+    //console.log(event);
+
+    //console.log(event.target.value);
+
+  }
+  ondecrementPCount(event : any)
+  {
+    if(this.addToCart>0)
+    this.addToCart = this.addToCart - 1; 
+    //console.log(event);
+  }
+  onIncrementPCount(event : any)
+  {
+    if(this.addToCart < this.product.instock )
+    this.addToCart = this.addToCart + 1; 
+    //console.log(event);
   }
 }
