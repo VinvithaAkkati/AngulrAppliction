@@ -1,14 +1,15 @@
 <div class="ekart--product--container">
-    <img [src]='product.pImage'>
+    <!-- <img [src]='product.pImage'>
     <p>Name: {{ product.name }}</p> 
     <p>Price: {{'$' + product.price}}</p>
     <P>Color: {{product.color}}</P>
     <p>Discounted Price: {{'$'+ getDiscountedPrice().toFixed(2)}}</p>
     <p>{{product.instock > 0 ? 'Only ' + product.instock + ' items Left' : 'Out of Stock'}}</p>
-    <!-- <button bind-disabled = 'isOutOfStock()' event = onClick()>Buy Now</button> -->
-     <button (click)="ondecrementPCount($event)" >-</button>
+    <button bind-disabled = 'isOutOfStock()' event = onClick()>Buy Now</button> -->
+     <!-- <button (click)="ondecrementPCount($event)" >-</button>
      <span>{{addToCart}}</span>
-     <button (click)="onIncrementPCount($event)" >+</button>
+     <button (click)="onIncrementPCount($event)" >+</button> -->
     <!-- <input (input)="onNameChange($event)"><br> -->
     <!-- <p>Owner = {{name}}</p> -->
+    <app-search></app-search>
 </div>

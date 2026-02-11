@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {SearchComponent} from './search/search.component';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SearchComponent],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
