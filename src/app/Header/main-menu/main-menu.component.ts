@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent {
-  ContactKey = 'ContactBox';
+  ContactKey = 'Contact2';
+  mainMenuItems: string[] = ['Home','Products','Sale','New Arrival','Contact']
   display = false;
 }
