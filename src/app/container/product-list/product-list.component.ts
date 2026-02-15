@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {ProductComponent} from './product/product.component'
+import {FilterComponent} from './filter/filter.component'
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProductComponent, FilterComponent],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
@@ -22,7 +23,7 @@ export class ProductListComponent {
       price: 160,
       discountPrice:140,
       is_in_inventory: true,
-      items_left: 3,
+      items_left: 0,
       imageURL: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg",
       slug: "nike-react-infinity-run-flyknit"
     },
@@ -130,7 +131,7 @@ export class ProductListComponent {
       price: 145,
       discountPrice:125,
       is_in_inventory: false,
-      items_left: 3,
+      items_left: 0,
       imageURL: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/vhbwnkor8sxt8qtecgia/mercurial-vapor-13-elite-tech-craft-fg-firm-ground-soccer-cleat-l38JPj.jpg",
       slug: "nike-mercurial-vapor-13-elite-tech-craft-fg"
     },
@@ -535,5 +536,34 @@ export class ProductListComponent {
       slug: "michael-feburary-sk8-hi"
     }
   ];
-    
+  //totalPCount();
+  totalPCount: number = this.products.length;
+  totalinStockCount()
+  {
+    let allCount = 0;
+    this.products.forEach(element => { 
+        if(element.items_left > 0)
+        {
+          allCount++;
+          
+        }
+      
+    });
+    //console.log(allCount);
+    return allCount;
+  }
+  totalOutOfStockCount()
+  {
+    let allCount = 0;
+    this.products.forEach(element => { 
+        if(element.items_left<= 0)
+        {
+          allCount++;
+          
+        }
+      
+    });
+    //console.log(allCount);
+    return allCount;
+  }
 }
