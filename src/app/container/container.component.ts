@@ -12,6 +12,13 @@ import { ProductListComponent } from './product-list/product-list.component';
 export class ContainerComponent {
 
   listOfStringArr: string[] = ['Mark', 'Sheela', 'Ramu', 'Mike'];
+  text: string = '';
+  typedText(value : string)
+  {
+    this.text = value;
+    console.log(value);
+
+  }
   // //name = "Vinvitha";
   // addToCart:number = 0; 
   // product = {

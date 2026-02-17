@@ -11,10 +11,10 @@
      <button (click)="onIncrementPCount($event)" >+</button> -->
     <!-- <input (input)="onNameChange($event)"><br> -->
     <!-- <p>Owner = {{name}}</p> -->
-    <app-search></app-search>
+    <app-search (searchTextChanged)="typedText($event)"></app-search>
     <!-- <div *ngFor="let item of [2,3,4,5,6,8]">
         <p>Hi {{item}}</p>
     </div> -->
     <!-- <app-product-list class="display--flex"></app-product-list> -->
-    <app-product-list></app-product-list>
+    <app-product-list [searchText]="text"></app-product-list>
 </div>

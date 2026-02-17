@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
@@ -10,11 +10,19 @@ import {FormsModule} from '@angular/forms';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-    searchText: string = "Womens wear"
+    
+  //@Output()
+  searchText: string = '';
+  @Output()
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
-    onSearch(event: any)
-    {
-      this.searchText = event.target.value
-      console.log(event.target.value)
-    }
+  onSearchTextChanged()
+  {
+    this.searchTextChanged.emit(this.searchText);
+  }
+  onSearch(event: any)
+  {
+    this.searchText = event.target.value
+    console.log(event.target.value)
+  }
 }
