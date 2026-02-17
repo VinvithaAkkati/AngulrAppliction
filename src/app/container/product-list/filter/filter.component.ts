@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-filter',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css']
 })
@@ -14,6 +15,19 @@ export class FilterComponent {
      get outOfStock(): number {
       return this.all - this.inStock;
     }
+    
+    selectedFilterRadioButton: string = 'all';
+    
+    @Output()
+    selectedFilterRadioButtonChanged: EventEmitter<string> = new EventEmitter<string>();
 
-    selectedRadioButton: string = 'all';
+    
+    onSelectedFilterRadioButtonChanged()
+    {
+      this.selectedFilterRadioButtonChanged.emit(this.selectedFilterRadioButton);
+    }
+    
+
+
+
 }
